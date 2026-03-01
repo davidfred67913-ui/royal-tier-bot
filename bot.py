@@ -86,3 +86,16 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(show_offer, pattern="show_offer"))
     
     application.run_polling()
+if __name__ == '__main__':
+    if not TOKEN:
+        print("ERROR: BOT_TOKEN variable is missing in Render Environment!")
+    else:
+        # Build application
+        application = ApplicationBuilder().token(TOKEN).build()
+        
+        application.add_handler(CommandHandler("start", start))
+        application.add_handler(CallbackQueryHandler(handle_unlock, pattern="check_join"))
+        application.add_handler(CallbackQueryHandler(show_offer, pattern="show_offer"))
+        
+        print("Bot is starting polling...")
+        application.run_polling(drop_pending_updates=True)
