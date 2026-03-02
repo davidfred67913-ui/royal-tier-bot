@@ -48,7 +48,7 @@ async def handle_unlock(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("🎰 Play Now", url=WEBSITE_LINK)],
             [InlineKeyboardButton("🎁 Today’s Offer", callback_data="show_offer")],
-          InlineKeyboardButton("📞 Support", url="https://www.cazino-big.com/article/faq?agent_id=33"),
+        InlineKeyboardButton("📞 Support", url="https://www.cazino-big.com/article/faq?agent_id=33"),
         await query.edit_message_text(
             "Unlocked 🎉\n\nStep 2/2: Continue to the site.",
             reply_markup=InlineKeyboardMarkup(keyboard)
